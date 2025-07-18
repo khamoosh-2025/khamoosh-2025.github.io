@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://khamoosh-2025.github.io/sitemap.xml
