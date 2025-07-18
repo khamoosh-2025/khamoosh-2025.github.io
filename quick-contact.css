@@ -1,0 +1,35 @@
+
+/* Quick Contact Box CSS */
+#quick-contact-box {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 250px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 1000;
+}
+#quick-contact-box form {
+  display: none;
+  flex-direction: column;
+}
+#quick-contact-box input,
+#quick-contact-box textarea {
+  margin: 5px 0;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+#quick-contact-box button {
+  background-color: #007BFF;
+  color: white;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#toggle-contact {
+  width: 100%;
+}
