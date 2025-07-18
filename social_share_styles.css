@@ -1,0 +1,36 @@
+
+/* ✅ CHANGE COMMENT: افزودن استایل‌های مربوط به دکمه‌های اشتراک‌گذاری شبکه‌های اجتماعی */
+.share-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.share-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  color: #333;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.share-buttons a:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+/* رنگ مخصوص هر شبکه اجتماعی */
+.share-buttons .whatsapp { background-color: #25D366; color: white; }
+.share-buttons .telegram { background-color: #0088cc; color: white; }
+.share-buttons .twitter  { background-color: #1da1f2; color: white; }
+.share-buttons .facebook { background-color: #3b5998; color: white; }
+.share-buttons .linkedin { background-color: #0077b5; color: white; }
+.share-buttons .copy     { background-color: #6c757d; color: white; }
+/* ✅ END CHANGE COMMENT */
