@@ -1,0 +1,16 @@
+
+<!-- Newsletter Subscription Section -->
+<section id="newsletter" style="padding: 2rem; background-color: #f9f9f9; border-top: 1px solid #ddd;">
+  <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">عضویت در خبرنامه</h2>
+  <form style="max-width: 400px; margin: 0 auto;" onsubmit="event.preventDefault(); subscribeNewsletter()">
+    <input type="email" id="newsletter-email" placeholder="ایمیل خود را وارد کنید" required
+           style="width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1rem;">
+    <button type="submit" style="width: 100%; padding: 0.75rem; background-color: #007BFF; color: white; border: none; border-radius: 8px;">ثبت‌نام</button>
+    <p id="newsletter-success" style="display: none; color: green; text-align: center; margin-top: 1rem;">با موفقیت ثبت شد!</p>
+  </form>
+</section>
+<script>
+function subscribeNewsletter() {
+  document.getElementById('newsletter-success').style.display = 'block';
+}
+</script>
