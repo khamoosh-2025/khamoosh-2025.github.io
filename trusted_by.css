@@ -1,0 +1,30 @@
+
+/* Trusted By Section */
+.trusted-by-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.trusted-by-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.trusted-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.trusted-logos img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.trusted-logos img:hover {
+  opacity: 1;
+}
