@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نقشه تصویری سایت</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .sitemap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .card a {
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>نقشه تصویری سایت</h1>
+  <div class="sitemap">
+    <div class="card"><a href="index.html">صفحه اصلی</a></div>
+    <div class="card"><a href="about.html">درباره من</a></div>
+    <div class="card"><a href="contact.html">تماس با من</a></div>
+    <div class="card"><a href="articles.html">مقالات</a></div>
+    <div class="card"><a href="portfolio.html">نمونه کارها</a></div>
+    <div class="card"><a href="projects.html">پروژه‌ها</a></div>
+    <div class="card"><a href="services.html">خدمات</a></div>
+    <div class="card"><a href="achievements.html">دستاوردها</a></div>
+    <div class="card"><a href="certificates.html">گواهینامه‌ها</a></div>
+  </div>
+</body>
+</html>
