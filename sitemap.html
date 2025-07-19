@@ -1,57 +1,26 @@
 
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>نقشه سایت</title>
-    <style>
-        body {
-            font-family: Tahoma, sans-serif;
-            background-color: #fdfdfd;
-            padding: 40px;
-            direction: rtl;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-            font-size: 32px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 8px 0;
-        }
-        a {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نقشه سایت</title>
+  <link rel="stylesheet" href="sitemap.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
+  <main class="sitemap-container">
     <h1>نقشه سایت</h1>
-    <ul>
-        <li><a href="index.html">صفحه اصلی</a></li>
-        <li><a href="about.html">درباره من</a></li>
-        <li><a href="contact.html">تماس با من</a></li>
-        <li><a href="articles.html">مقالات</a></li>
-        <li><a href="portfolio.html">نمونه کارها</a></li>
-        <li><a href="projects.html">پروژه‌ها</a></li>
-        <li><a href="achievements.html">دستاوردها</a></li>
-        <li><a href="services.html">خدمات</a></li>
-        <li><a href="team.html">اعضای تیم</a></li>
-        <li><a href="certificates.html">گواهینامه‌ها</a></li>
-        <li><a href="testimonials.html">نظرات کاربران</a></li>
-        <li><a href="faq.html">سؤالات متداول</a></li>
-        <li><a href="updates.html">آخرین بروزرسانی‌ها</a></li>
-        <li><a href="newsletter.html">خبرنامه</a></li>
-        <li><a href="sitemap.html">نقشه سایت</a></li>
+    <ul class="sitemap-list">
+      <li><i class="bi bi-house-door"></i><a href="index.html">صفحه اصلی</a></li>
+      <li><i class="bi bi-person"></i><a href="about.html">درباره من</a></li>
+      <li><i class="bi bi-journal-text"></i><a href="articles.html">مقالات</a></li>
+      <li><i class="bi bi-phone"></i><a href="contact.html">تماس با من</a></li>
+      <li><i class="bi bi-briefcase"></i><a href="portfolio.html">نمونه‌کارها</a></li>
+      <li><i class="bi bi-star"></i><a href="achievements.html">دستاوردها</a></li>
+      <li><i class="bi bi-people"></i><a href="team.html">تیم</a></li>
     </ul>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top">↑ بازگشت به بالا</button>
+  </main>
 </body>
 </html>
