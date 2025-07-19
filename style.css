@@ -1,52 +1,39 @@
 
-body {
-  font-family: 'Tahoma', sans-serif;
-  background-color: #f4f4f4;
+/* style.css */
+/* استایل مدرن و تمیز برای راهنمای فونت‌ها */
+.font-guide {
+  padding: 2rem;
+  background-color: #faf9f7;
+  font-family: "Tahoma", sans-serif;
+  color: #222;
+}
+.font-guide h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+.font-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.font-card h3 {
   margin: 0;
-  padding: 0;
+  font-size: 1.5rem;
 }
-
-header {
-  background-color: #222;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+.font-card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
 }
-
-.title {
-  font-size: 2em;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.art-card {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.art-card:hover {
-  transform: scale(1.05);
-}
-
-.art-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.art-card h2 {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
-.art-card p {
-  font-size: 0.9em;
-  color: #555;
+.tag {
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.3rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
 }
