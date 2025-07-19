@@ -1,76 +1,27 @@
-
+/* style.css */
 body {
-    margin: 0;
-    font-family: 'Tahoma', sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+  font-family: 'Tahoma', sans-serif;
+  direction: rtl;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
 }
-
-.sticky-header {
-    background: #0077cc;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+header, footer {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
 }
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+nav {
+  background-color: #eee;
+  padding: 1em;
+  text-align: center;
 }
-
-nav ul li {
-    margin: 0 15px;
+nav a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
 }
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    background: url('https://source.unsplash.com/1600x400/?abstract') no-repeat center center/cover;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #ff9900;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.about, .cards {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
+section {
+  padding: 20px;
 }
