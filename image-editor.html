@@ -1,1 +1,118 @@
-<!-- ابزار ویرایش تصویر -->
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>ابزار ویرایش تصویر</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    .editor-container {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    canvas {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+    input[type=range] {
+      width: 80%;
+    }
+    .controls {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor-container">
+    <h2>ابزار ویرایش تصویر</h2>
+    <input type="file" id="upload" accept="image/*"><br><br>
+    <div class="controls">
+      <label>روشنایی: <span id="brightnessVal">100</span>%</label><br>
+      <input type="range" id="brightness" min="0" max="200" value="100">
+    </div>
+    <div class="controls">
+      <label>کنتراست: <span id="contrastVal">100</span>%</label><br>
+      <input type="range" id="contrast" min="0" max="200" value="100">
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <script>
+    const upload = document.getElementById('upload');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const brightness = document.getElementById('brightness');
+    const contrast = document.getElementById('contrast');
+    const brightnessVal = document.getElementById('brightnessVal');
+    const contrastVal = document.getElementById('contrastVal');
+
+    let img = new Image();
+    let originalImageData;
+
+    upload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        img.onload = function() {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+          originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        }
+        img.src = event.target.result;
+      }
+      reader.readAsDataURL(file);
+    });
+
+    function applyFilters() {
+      if (!originalImageData) return;
+
+      const brightnessFactor = brightness.value / 100;
+      const contrastFactor = contrast.value / 100;
+
+      let imageData = new ImageData(
+        new Uint8ClampedArray(originalImageData.data),
+        originalImageData.width,
+        originalImageData.height
+      );
+
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        // روشنایی
+        data[i] = data[i] * brightnessFactor;
+        data[i + 1] = data[i + 1] * brightnessFactor;
+        data[i + 2] = data[i + 2] * brightnessFactor;
+
+        // کنتراست
+        data[i] = ((data[i] - 128) * contrastFactor + 128);
+        data[i + 1] = ((data[i + 1] - 128) * contrastFactor + 128);
+        data[i + 2] = ((data[i + 2] - 128) * contrastFactor + 128);
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    brightness.addEventListener('input', () => {
+      brightnessVal.textContent = brightness.value;
+      applyFilters();
+    });
+
+    contrast.addEventListener('input', () => {
+      contrastVal.textContent = contrast.value;
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
