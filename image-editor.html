@@ -1,21 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ویرایشگر حرفه‌ای تصویر</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ویرایش تصویر</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .editor-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    input[type=range] {
+      width: 100%;
+    }
+    .controls {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>ویرایشگر حرفه‌ای تصویر</h1>
-    <input type="file" id="upload" accept="image/*" />
-    <canvas id="canvas"></canvas>
-    <div class="buttons">
-      <button onclick="enhanceImage()">شفاف‌سازی</button>
-      <a id="download" download="edited-image.png">دانلود تصویر</a>
+  <div class="editor-container">
+    <h2>ابزار ویرایش تصویر</h2>
+    <input type="file" id="upload" accept="image/*"><br><br>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="preview" src="" alt="" /><br>
+
+    <div class="controls">
+      <label>روشنایی</label>
+      <input type="range" id="brightness" min="0" max="200" value="100"><br>
+      <label>کنتراست</label>
+      <input type="range" id="contrast" min="0" max="200" value="100"><br>
+      <label>شفافیت</label>
+      <input type="range" id="opacity" min="0" max="100" value="100"><br>
+      <button onclick="downloadImage()">دانلود تصویر ویرایش‌شده</button>
     </div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    const upload = document.getElementById('upload');
+    const preview = document.getElementById('preview');
+    const brightness = document.getElementById('brightness');
+    const contrast = document.getElementById('contrast');
+    const opacity = document.getElementById('opacity');
+
+    upload.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function applyFilters() {
+      preview.style.filter = `brightness(${brightness.value}%) contrast(${contrast.value}%) opacity(${opacity.value}%)`;
+    }
+
+    brightness.oninput = contrast.oninput = opacity.oninput = applyFilters;
+
+    function downloadImage() {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = preview;
+
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      ctx.filter = `brightness(${brightness.value}%) contrast(${contrast.value}%) opacity(${opacity.value}%)`;
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      const link = document.createElement('a');
+      link.download = 'edited-image.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+  </script>
 </body>
 </html>
