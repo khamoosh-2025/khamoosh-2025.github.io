@@ -1,53 +1,34 @@
+const upload = document.getElementById('upload');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let img = new Image();
 
-let canvas = document.getElementById("imageCanvas");
-let ctx = canvas.getContext("2d");
-let image = new Image();
-let brightnessControl = document.getElementById("brightness");
-let contrastControl = document.getElementById("contrast");
-
-document.getElementById("imageUpload").addEventListener("change", function (e) {
+upload.addEventListener('change', (e) => {
+  const file = e.target.files[0];
   const reader = new FileReader();
-  reader.onload = function (event) {
-    image.onload = () => {
-      canvas.width = image.width;
-      canvas.height = image.height;
-      ctx.drawImage(image, 0, 0);
+  reader.onload = function(event) {
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
     };
-    image.src = event.target.result;
+    img.src = event.target.result;
   };
-  reader.readAsDataURL(e.target.files[0]);
+  if (file) {
+    reader.readAsDataURL(file);
+  }
 });
 
-function applyAdjustments() {
-  const brightness = parseFloat(brightnessControl.value);
-  const contrast = parseFloat(contrastControl.value);
-
-  ctx.drawImage(image, 0, 0);
-  let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  let data = imageData.data;
-
+function enhanceImage() {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
   for (let i = 0; i < data.length; i += 4) {
-    data[i] = truncate(((data[i] - 128) * contrast + 128) * brightness);
-    data[i + 1] = truncate(((data[i + 1] - 128) * contrast + 128) * brightness);
-    data[i + 2] = truncate(((data[i + 2] - 128) * contrast + 128) * brightness);
+    data[i] = Math.min(255, data[i] + 20);     // Red
+    data[i+1] = Math.min(255, data[i+1] + 20); // Green
+    data[i+2] = Math.min(255, data[i+2] + 20); // Blue
   }
-
   ctx.putImageData(imageData, 0, 0);
-}
 
-function autoEnhance() {
-  brightnessControl.value = 1.2;
-  contrastControl.value = 1.2;
-  applyAdjustments();
-}
-
-function truncate(value) {
-  return Math.min(255, Math.max(0, value));
-}
-
-function downloadImage() {
-  const link = document.createElement("a");
-  link.download = "edited-image.png";
+  const link = document.getElementById('download');
   link.href = canvas.toDataURL();
-  link.click();
 }
