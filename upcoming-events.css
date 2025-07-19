@@ -1,0 +1,38 @@
+
+/* Upcoming Events Section */
+.upcoming-events-section {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+.upcoming-events-section .section-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+.event-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.event-card:hover {
+  transform: translateY(-5px);
+}
+.event-title {
+  font-size: 20px;
+  color: #0077cc;
+  margin-bottom: 10px;
+}
+.event-date {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+.event-description {
+  color: #444;
+  font-size: 15px;
+}
