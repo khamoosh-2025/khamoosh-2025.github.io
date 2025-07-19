@@ -1,0 +1,38 @@
+
+/* moments-style.css */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  direction: rtl;
+  background: #f8f9fa;
+}
+
+.moment-section {
+  background-image: url('bg-textured.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+}
+
+.moment-title {
+  font-size: 60px;
+  font-family: 'IranNastaliq', serif;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffcc70, #ff7b54);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.moment-subtitle {
+  font-size: 24px;
+  font-family: 'B Nazanin', serif;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
