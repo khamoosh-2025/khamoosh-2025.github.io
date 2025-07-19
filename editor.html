@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='fa'>
+<head>
+<meta charset='UTF-8'>
+<title>ویرایشگر تصویر</title>
+</head>
+<body>
+
+<!-- 🔧 شروع ابزار ویرایشگر تصویر -->
+<section id="image-editor" class="image-editor-section">
+  <h2>ویرایشگر تصویر آنلاین</h2>
+  <p>یک عکس را بارگذاری کنید و آن را به‌صورت دلخواه ویرایش نمایید (روشنایی، کنتراست، شفافیت و...)</p>
+  
+  <input type="file" id="upload" accept="image/*" />
+  <canvas id="canvas" style="max-width: 100%; border: 1px solid #ccc;"></canvas>
+  
+  <div class="controls">
+    <label>روشنایی:
+      <input type="range" id="brightness" min="0" max="200" value="100">
+    </label>
+    <label>کنتراست:
+      <input type="range" id="contrast" min="0" max="200" value="100">
+    </label>
+    <label>شفافیت:
+      <input type="range" id="opacity" min="0" max="100" value="100">
+    </label>
+  </div>
+</section>
+<!-- 🔧 پایان ابزار ویرایشگر تصویر -->
+
+<!-- 📜 اسکریپت ویرایشگر -->
+<script>
+  const upload = document.getElementById('upload');
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let image = new Image();
+
+  upload.addEventListener('change', (e) => {
+    const file = upload.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      image.onload = () => {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        ctx.drawImage(image, 0, 0);
+      };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  const brightness = document.getElementById('brightness');
+  const contrast = document.getElementById('contrast');
+  const opacity = document.getElementById('opacity');
+
+  [brightness, contrast, opacity].forEach(control => {
+    control.addEventListener('input', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.filter = `
+        brightness(${brightness.value}%)
+        contrast(${contrast.value}%)
+        opacity(${opacity.value / 100})
+      `;
+      ctx.drawImage(image, 0, 0);
+    });
+  });
+</script>
+
+<!-- 🎨 استایل‌ها -->
+<style>
+  .image-editor-section {
+    padding: 1rem;
+    background: #f9f9f9;
+    margin-top: 2rem;
+    border-radius: 10px;
+  }
+  .controls {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .controls label {
+    font-size: 0.9rem;
+  }
+</style>
+
+</body>
+</html>
