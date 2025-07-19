@@ -4,22 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ویرایشگر تصویر</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>صفحه اصلی</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; background: #f9f9f9; padding: 20px; }
+    nav ul { list-style-type: none; padding: 0; }
+    nav li { display: inline; margin: 0 10px; }
+    nav a { text-decoration: none; color: #007BFF; font-weight: bold; }
+    nav a:hover { color: #0056b3; }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h2>ویرایشگر تصویر</h2>
-    <input type="file" id="imageUpload" accept="image/*" />
-    <canvas id="imageCanvas"></canvas>
-    <div class="controls">
-      <button onclick="autoEnhance()">ویرایش خودکار</button>
-      <label>روشنایی: <input type="range" id="brightness" min="0" max="2" step="0.1" value="1"></label>
-      <label>کنتراست: <input type="range" id="contrast" min="0" max="2" step="0.1" value="1"></label>
-      <button onclick="applyAdjustments()">اعمال تغییرات</button>
-      <button onclick="downloadImage()">دانلود تصویر</button>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <header>
+    <h1>به وب‌سایت من خوش آمدید</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="about.html">درباره</a></li>
+        <li><a href="image-editor.html">ویرایش تصویر</a></li>
+        <li><a href="contact.html">تماس با من</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <p>این صفحه اصلی وب‌سایت است. از منوی بالا برای دسترسی به بخش‌های مختلف استفاده کنید.</p>
+  </main>
 </body>
 </html>
