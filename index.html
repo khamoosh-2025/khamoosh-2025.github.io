@@ -2,11 +2,24 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>خانه | khamoosh-2025</title>
-  <meta name="description" content="سایت رسمی khamoosh-2025 شامل نمونه‌کارها، مقالات، خدمات و دستاوردها. طراحی‌شده برای الهام و ارتباط مؤثر.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ویرایشگر تصویر</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Page content -->
+  <div class="container">
+    <h2>ویرایشگر تصویر</h2>
+    <input type="file" id="imageUpload" accept="image/*" />
+    <canvas id="imageCanvas"></canvas>
+    <div class="controls">
+      <button onclick="autoEnhance()">ویرایش خودکار</button>
+      <label>روشنایی: <input type="range" id="brightness" min="0" max="2" step="0.1" value="1"></label>
+      <label>کنتراست: <input type="range" id="contrast" min="0" max="2" step="0.1" value="1"></label>
+      <button onclick="applyAdjustments()">اعمال تغییرات</button>
+      <button onclick="downloadImage()">دانلود تصویر</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
