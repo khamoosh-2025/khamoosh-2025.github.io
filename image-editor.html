@@ -1,118 +1,100 @@
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ابزار ویرایش تصویر</title>
   <style>
     body {
       font-family: sans-serif;
+      background: #f2f2f2;
       padding: 20px;
-      background: #f5f5f5;
-      text-align: center;
+      direction: rtl;
     }
-    .editor-container {
-      background: white;
+    h1 {
+      color: #333;
+    }
+    .editor {
+      background: #fff;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       max-width: 600px;
       margin: auto;
     }
-    canvas {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      margin-top: 15px;
-      border-radius: 10px;
-    }
     input[type=range] {
-      width: 80%;
+      width: 100%;
     }
-    .controls {
-      margin: 15px 0;
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .download {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="editor-container">
-    <h2>ابزار ویرایش تصویر</h2>
-    <input type="file" id="upload" accept="image/*"><br><br>
-    <div class="controls">
-      <label>روشنایی: <span id="brightnessVal">100</span>%</label><br>
-      <input type="range" id="brightness" min="0" max="200" value="100">
-    </div>
-    <div class="controls">
-      <label>کنتراست: <span id="contrastVal">100</span>%</label><br>
-      <input type="range" id="contrast" min="0" max="200" value="100">
-    </div>
-    <canvas id="canvas"></canvas>
+  <div class="editor">
+    <h1>ابزار ویرایش تصویر</h1>
+    <input type="file" id="upload" accept="image/*">
+    <br><br>
+    <img id="photo" src="" alt="پیش‌نمایش" style="display: none;">
+    <br>
+    <label>شفافیت</label>
+    <input type="range" min="0" max="1" step="0.01" value="1" id="opacity">
+    <label>روشنایی</label>
+    <input type="range" min="0" max="2" step="0.01" value="1" id="brightness">
+    <label>کنتراست</label>
+    <input type="range" min="0" max="3" step="0.01" value="1" id="contrast">
+    <br>
+    <a class="download" id="downloadLink" style="display: none;">دانلود تصویر</a>
   </div>
   <script>
     const upload = document.getElementById('upload');
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
+    const photo = document.getElementById('photo');
+    const opacity = document.getElementById('opacity');
     const brightness = document.getElementById('brightness');
     const contrast = document.getElementById('contrast');
-    const brightnessVal = document.getElementById('brightnessVal');
-    const contrastVal = document.getElementById('contrastVal');
+    const downloadLink = document.getElementById('downloadLink');
 
-    let img = new Image();
-    let originalImageData;
+    function updateFilters() {
+      photo.style.filter = `
+        opacity(${opacity.value})
+        brightness(${brightness.value})
+        contrast(${contrast.value})
+      `;
+    }
 
     upload.addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (!file) return;
       const reader = new FileReader();
       reader.onload = function(event) {
-        img.onload = function() {
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
-          originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        }
-        img.src = event.target.result;
+        photo.src = event.target.result;
+        photo.style.display = 'block';
+        downloadLink.href = event.target.result;
+        downloadLink.download = 'edited-image.png';
+        downloadLink.style.display = 'inline-block';
       }
       reader.readAsDataURL(file);
     });
 
-    function applyFilters() {
-      if (!originalImageData) return;
-
-      const brightnessFactor = brightness.value / 100;
-      const contrastFactor = contrast.value / 100;
-
-      let imageData = new ImageData(
-        new Uint8ClampedArray(originalImageData.data),
-        originalImageData.width,
-        originalImageData.height
-      );
-
-      const data = imageData.data;
-
-      for (let i = 0; i < data.length; i += 4) {
-        // روشنایی
-        data[i] = data[i] * brightnessFactor;
-        data[i + 1] = data[i + 1] * brightnessFactor;
-        data[i + 2] = data[i + 2] * brightnessFactor;
-
-        // کنتراست
-        data[i] = ((data[i] - 128) * contrastFactor + 128);
-        data[i + 1] = ((data[i + 1] - 128) * contrastFactor + 128);
-        data[i + 2] = ((data[i + 2] - 128) * contrastFactor + 128);
-      }
-
-      ctx.putImageData(imageData, 0, 0);
-    }
-
-    brightness.addEventListener('input', () => {
-      brightnessVal.textContent = brightness.value;
-      applyFilters();
-    });
-
-    contrast.addEventListener('input', () => {
-      contrastVal.textContent = contrast.value;
-      applyFilters();
-    });
+    opacity.addEventListener('input', updateFilters);
+    brightness.addEventListener('input', updateFilters);
+    contrast.addEventListener('input', updateFilters);
   </script>
 </body>
 </html>
