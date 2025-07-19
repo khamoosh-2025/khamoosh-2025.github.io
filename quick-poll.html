@@ -1,0 +1,77 @@
+
+<!-- 🔹 Quick Poll Section | START -->
+<section class="poll-section" id="quick-poll">
+  <div class="poll-box">
+    <h2>📊 نظرسنجی سریع</h2>
+    <p class="poll-question">کدام بخش سایت را بیشتر دوست داشتید؟</p>
+    <form id="poll-form">
+      <label><input type="radio" name="poll" value="design"> طراحی سایت</label><br>
+      <label><input type="radio" name="poll" value="articles"> مقالات</label><br>
+      <label><input type="radio" name="poll" value="projects"> پروژه‌ها</label><br>
+      <label><input type="radio" name="poll" value="other"> بخش‌های دیگر</label><br>
+      <button type="submit">ثبت رأی</button>
+    </form>
+    <div id="poll-result" style="display: none;">
+      <h4>✅ نتیجه نظرسنجی:</h4>
+      <ul>
+        <li>طراحی سایت: 45%</li>
+        <li>مقالات: 30%</li>
+        <li>پروژه‌ها: 20%</li>
+        <li>بخش‌های دیگر: 5%</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- 🔹 Quick Poll Section | END -->
+
+<style>
+  .poll-section {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    padding: 2rem;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    text-align: right;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 2rem;
+  }
+  .poll-box {
+    max-width: 500px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .poll-box h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  .poll-question {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  #poll-form label {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  #poll-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  #poll-form button:hover {
+    background-color: #388E3C;
+  }
+  #poll-result ul {
+    padding-right: 1rem;
+    list-style-type: disc;
+  }
+</style>
