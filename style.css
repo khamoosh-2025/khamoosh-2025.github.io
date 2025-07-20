@@ -1,42 +1,18 @@
-/* ✅ Comment Change 1: Updated layout and colors */
+/* Final Version */
 body {
-  font-family: 'Tahoma', sans-serif;
+  font-family: sans-serif;
+  direction: rtl;
+  background-color: #f4f4f4;
+  color: #222;
   margin: 0;
   padding: 0;
-  background-color: #fefefe;
-  color: #333;
 }
 header, footer {
-  background-color: #003049;
+  background-color: #333;
   color: white;
-  padding: 1em;
   text-align: center;
+  padding: 1rem;
 }
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-nav ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
-nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-section {
-  padding: 2em;
-}
-form input, form textarea {
-  display: block;
-  width: 100%;
-  margin-bottom: 1em;
-  padding: 0.5em;
-}
-button {
-  padding: 0.7em 1.5em;
-  background-color: #d62828;
-  color: white;
-  border: none;
-  cursor: pointer;
+main {
+  padding: 2rem;
 }
