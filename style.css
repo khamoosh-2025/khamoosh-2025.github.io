@@ -1,1 +1,35 @@
-/* استایل کلی سایت */
+
+/* 🎨 Card styles for roadmap section */
+.roadmap-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.roadmap-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-5px);
+}
+
+.roadmap-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.roadmap-card p {
+  font-size: 1rem;
+  color: #6c757d;
+}
