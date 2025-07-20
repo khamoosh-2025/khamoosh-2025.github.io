@@ -1,26 +1,49 @@
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نقشه سایت</title>
-  <link rel="stylesheet" href="sitemap.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نقشه سایت</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            direction: rtl;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #444;
+        }
+        ul {
+            line-height: 2;
+            list-style-type: square;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <main class="sitemap-container">
     <h1>نقشه سایت</h1>
-    <ul class="sitemap-list">
-      <li><i class="bi bi-house-door"></i><a href="index.html">صفحه اصلی</a></li>
-      <li><i class="bi bi-person"></i><a href="about.html">درباره من</a></li>
-      <li><i class="bi bi-journal-text"></i><a href="articles.html">مقالات</a></li>
-      <li><i class="bi bi-phone"></i><a href="contact.html">تماس با من</a></li>
-      <li><i class="bi bi-briefcase"></i><a href="portfolio.html">نمونه‌کارها</a></li>
-      <li><i class="bi bi-star"></i><a href="achievements.html">دستاوردها</a></li>
-      <li><i class="bi bi-people"></i><a href="team.html">تیم</a></li>
+    <ul>
+        <li><a href="index.html">صفحه اصلی</a></li>
+        <li><a href="about.html">درباره من</a></li>
+        <li><a href="contact.html">تماس با من</a></li>
+        <li><a href="articles-archive.html">بایگانی مقالات</a></li>
+        <li><a href="article.html">مقالات</a></li>
+        <li><a href="projects.html">پروژه‌ها</a></li>
+        <li><a href="portfolio.html">نمونه‌کارها</a></li>
+        <li><a href="services.html">خدمات من</a></li>
+        <li><a href="achievements.html">افتخارات</a></li>
+        <li><a href="team.html">اعضای تیم</a></li>
+        <li><a href="certificates.html">گواهینامه‌ها</a></li>
+        <li><a href="faq.html">سؤالات متداول</a></li>
+        <li><a href="404.html">صفحه ۴۰۴</a></li>
     </ul>
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="back-to-top">↑ بازگشت به بالا</button>
-  </main>
 </body>
 </html>
