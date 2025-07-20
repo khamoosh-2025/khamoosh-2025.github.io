@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ابزار ساخت نقل‌قول تصویری</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; direction: rtl; background-color: #f0f0f0; }
+    .tool-container { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 500px; margin: auto; }
+    textarea { width: 100%; height: 100px; padding: 1rem; font-size: 1rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 8px; resize: none; }
+    .output { padding: 2rem; margin-top: 1rem; border: 2px dashed #aaa; border-radius: 12px; min-height: 120px; background-color: white; position: relative; }
+    .controls { margin: 1rem 0; }
+    label { display: block; margin: 0.5rem 0 0.2rem; }
+    select, input[type="color"] { padding: 0.3rem; border-radius: 6px; border: 1px solid #aaa; }
+    button { background: #4caf50; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; margin-top: 1rem; }
+    .guide { margin-top: 2rem; font-size: 0.9rem; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="tool-container">
+    <h2>ابزار ساخت نقل‌قول تصویری</h2>
+    <textarea id="quoteInput" placeholder="متن خود را اینجا وارد کنید..."></textarea>
+    <div class="controls">
+      <label for="fontSelect">فونت:</label>
+      <select id="fontSelect">
+        <option value="sans-serif">Sans-serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+      </select>
+      <label for="bgColor">رنگ پس‌زمینه:</label>
+      <input type="color" id="bgColor" value="#ffffff"/>
+    </div>
+    <div class="output" id="outputDisplay">متن شما اینجا نمایش داده خواهد شد</div>
+    <button onclick="downloadImage()">دانلود تصویر</button>
+
+    <div class="guide">
+      🛈 راهنما: متن خود را وارد کنید، رنگ و فونت را انتخاب نمایید، سپس با دکمه «دانلود تصویر» آن را ذخیره کنید.
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("quoteInput");
+    const output = document.getElementById("outputDisplay");
+    const fontSelect = document.getElementById("fontSelect");
+    const bgColor = document.getElementById("bgColor");
+
+    input.addEventListener("input", () => output.innerText = input.value);
+    fontSelect.addEventListener("change", () => output.style.fontFamily = fontSelect.value);
+    bgColor.addEventListener("change", () => output.style.backgroundColor = bgColor.value);
+
+    function downloadImage() {
+      html2canvas(output).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'quote-image.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>
