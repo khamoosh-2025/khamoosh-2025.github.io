@@ -1,10 +1,4 @@
-// ✅ Comment Change 2: Smooth scroll and animation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+// Final Version
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("سایت با موفقیت بارگذاری شد.");
 });
