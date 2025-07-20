@@ -1,0 +1,46 @@
+
+.career-timeline {
+    direction: rtl;
+    background-color: #fdfdfd;
+    padding: 50px 20px;
+    text-align: center;
+}
+.career-timeline h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #333;
+}
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.timeline-year {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    min-width: 80px;
+}
+.timeline-content {
+    background-color: #f0f0f0;
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: right;
+    flex-grow: 1;
+}
+.timeline-content h3 {
+    margin: 0 0 10px;
+    color: #222;
+}
+.timeline-content p {
+    margin: 0;
+    color: #555;
+    font-size: 15px;
+}
