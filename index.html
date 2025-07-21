@@ -1,89 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>پیش‌نمایش خوشنویسی فارسی</title>
-  <style>
-    @font-face { font-family: 'IranNastaliq'; src: url('fonts/IranNastaliq.ttf'); }
-    @font-face { font-family: 'Adous'; src: url('fonts/Adous.ttf'); }
-    @font-face { font-family: 'MatnNegar'; src: url('fonts/MatnNegar.ttf'); }
-    @font-face { font-family: 'Sulsin'; src: url('fonts/Sulsin.ttf'); }
-
-    body {
-      font-family: 'IranNastaliq', sans-serif;
-      background: #fefefe;
-      color: #111;
-      padding: 20px;
-      text-align: center;
-    }
-
-    select, textarea, button {
-      font-size: 16px;
-      margin: 10px auto;
-      padding: 10px;
-      width: 90%;
-      max-width: 500px;
-    }
-
-    #preview {
-      margin-top: 30px;
-      padding: 20px;
-      border: 1px dashed #ccc;
-      min-height: 150px;
-      font-size: 24px;
-      white-space: pre-wrap;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>انتخاب فونت</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v29.1.0/dist/font-face.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v26.1.0/dist/font-face.css" rel="stylesheet" />
 </head>
 <body>
-  <h2>پیش‌نمایش فونت‌های خوشنویسی فارسی</h2>
-  <textarea id="textInput" rows="4" placeholder="متن خود را اینجا بنویسید..."></textarea>
-  <br>
-  <select id="fontSelector">
-    <option value="IranNastaliq">ایران نستعلیق</option>
-    <option value="Adous">آدوس</option>
-    <option value="MatnNegar">متن‌نگار</option>
-    <option value="Sulsin">ثلثین</option>
-  </select>
-  <br>
-  <button onclick="copyText()">کپی متن</button>
-  <button onclick="downloadSVG()">دانلود به صورت SVG</button>
-  <div id="preview">پیش‌نمایش متن شما اینجا نمایش داده می‌شود.</div>
-
-  <script>
-    const input = document.getElementById('textInput');
-    const preview = document.getElementById('preview');
-    const fontSelector = document.getElementById('fontSelector');
-
-    input.addEventListener('input', () => preview.innerText = input.value);
-    fontSelector.addEventListener('change', () => {
-      preview.style.fontFamily = fontSelector.value;
-    });
-
-    function copyText() {
-      navigator.clipboard.writeText(preview.innerText).then(() => {
-        alert("متن کپی شد!");
-      });
-    }
-
-    function downloadSVG() {
-      const svg = `<?xml version="1.0" encoding="UTF-8"?>
-        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="200">
-          <style>
-            @import url('#{fontSelector.value}');
-          </style>
-          <text x="10" y="100" font-family="${fontSelector.value}" font-size="24" fill="black">
-            ${input.value}
-          </text>
-        </svg>`;
-      const blob = new Blob([svg], {type: "image/svg+xml"});
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "text.svg";
-      link.click();
-    }
-  </script>
+  <div class="container">
+    <h1 id="title">تغییر فونت</h1>
+    <select id="fontSelector">
+      <option value="Vazir">فونت وزیر</option>
+      <option value="Shabnam">فونت شبنم</option>
+      <option value="Samim">فونت صمیم</option>
+    </select>
+    <p id="text">این متن با فونت انتخابی نمایش داده می‌شود.</p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
