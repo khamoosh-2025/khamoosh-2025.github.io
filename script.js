@@ -1,38 +1,42 @@
-const editor = document.getElementById("editor");
-const preview = document.getElementById("preview");
 
-function updatePreview() {
-  preview.innerHTML = editor.value;
-}
-editor.addEventListener("input", updatePreview);
+const canvas = document.getElementById('imageCanvas');
+const ctx = canvas.getContext('2d');
+const imageLoader = document.getElementById('imageLoader');
+const textInput = document.getElementById('textInput');
+const fontSelector = document.getElementById('fontSelector');
 
-function setBold() {
-  wrapText("<b>", "</b>");
-}
-function setItalic() {
-  wrapText("<i>", "</i>");
-}
-function setUnderline() {
-  wrapText("<u>", "</u>");
-}
-function setColor(color) {
-  wrapText("<span style='color:" + color + "'>", "</span>");
-}
-function insertImage(input) {
-  const file = input.files[0];
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    editor.value += `<img src="${e.target.result}" style="max-width:100%;">`;
-    updatePreview();
-  };
-  if (file) reader.readAsDataURL(file);
+let image = new Image();
+
+imageLoader.addEventListener('change', handleImage, false);
+textInput.addEventListener('input', drawText);
+fontSelector.addEventListener('change', drawText);
+
+function handleImage(e) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        image.onload = () => {
+            canvas.width = image.width;
+            canvas.height = image.height;
+            ctx.drawImage(image, 0, 0);
+            drawText();
+        }
+        image.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
 }
 
-function wrapText(startTag, endTag) {
-  const start = editor.selectionStart;
-  const end = editor.selectionEnd;
-  const selected = editor.value.substring(start, end);
-  const newText = editor.value.substring(0, start) + startTag + selected + endTag + editor.value.substring(end);
-  editor.value = newText;
-  updatePreview();
+function drawText() {
+    ctx.drawImage(image, 0, 0);
+    const text = textInput.value;
+    const font = fontSelector.value;
+    ctx.font = "40px " + font;
+    ctx.fillStyle = "red";
+    ctx.fillText(text, 50, 50);
+}
+
+function downloadImage() {
+    const link = document.createElement('a');
+    link.download = 'edited_image.png';
+    link.href = canvas.toDataURL();
+    link.click();
 }
