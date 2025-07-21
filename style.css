@@ -1,29 +1,15 @@
 
+@font-face {
+    font-family: 'Vazir';
+    src: url('fonts/Vazir.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'Vazir', sans-serif;
-    background-color: #f2f2f2;
-    text-align: center;
     direction: rtl;
-    padding: 20px;
-}
-
-.editor-container {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    display: inline-block;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-canvas {
-    border: 1px solid #ccc;
-    margin-top: 10px;
-    max-width: 100%;
-}
-
-textarea, select {
-    display: block;
-    margin: 10px auto;
-    padding: 10px;
-    width: 90%;
+    background: #f7f7f7;
+    padding: 2rem;
+    color: #333;
 }
