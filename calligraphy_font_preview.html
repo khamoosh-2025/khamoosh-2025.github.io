@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>پیش‌نمایش خوشنویسی</title>
+  <style>
+    @font-face {
+      font-family: 'IranNastaliq';
+      src: url('fonts/IranNastaliq.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Adoos';
+      src: url('fonts/Adoos.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Matnnegar';
+      src: url('fonts/Matnnegar.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Thuluthin';
+      src: url('fonts/Thuluthin.woff2') format('woff2');
+    }
+
+    body {
+      background: #f7f5f0;
+      font-family: sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    textarea {
+      width: 80%;
+      height: 150px;
+      font-size: 1.5rem;
+      padding: 10px;
+      margin-bottom: 1rem;
+      direction: rtl;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 6px 12px;
+      margin-bottom: 1rem;
+    }
+
+    .preview {
+      margin-top: 2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #fff;
+      border: 2px dashed #999;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>پیش‌نمایش خوشنویسی فارسی</h1>
+  <textarea id="textInput" placeholder="متن دلخواه خود را بنویسید..."></textarea><br>
+  <select id="fontSelector">
+    <option value="IranNastaliq">ایران نستعلیق</option>
+    <option value="Adoos">آدوس</option>
+    <option value="Matnnegar">متن‌نگار</option>
+    <option value="Thuluthin">ثلثین</option>
+  </select>
+  <div class="preview" id="previewBox">پیش‌نمایش متن شما در اینجا نمایش داده می‌شود.</div>
+
+  <script>
+    const textInput = document.getElementById('textInput');
+    const fontSelector = document.getElementById('fontSelector');
+    const previewBox = document.getElementById('previewBox');
+
+    function updatePreview() {
+      const text = textInput.value || 'پیش‌نمایش متن شما در اینجا نمایش داده می‌شود.';
+      const font = fontSelector.value;
+      previewBox.style.fontFamily = font;
+      previewBox.innerText = text;
+    }
+
+    textInput.addEventListener('input', updatePreview);
+    fontSelector.addEventListener('change', updatePreview);
+    window.onload = updatePreview;
+  </script>
+</body>
+</html>
