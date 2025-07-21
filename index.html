@@ -3,20 +3,23 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>ویرایش عکس و متن فارسی</title>
-    <link href="style.css" rel="stylesheet">
+    <title>ویرایشگر تصویر و متن</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="editor-container">
-        <input type="file" id="imageLoader" name="imageLoader" accept="image/*"/>
-        <canvas id="imageCanvas"></canvas>
-        <textarea id="textInput" placeholder="متن را بنویسید..."></textarea>
-        <select id="fontSelector">
-            <option value="Vazir">وزیر</option>
-            <option value="Shabnam">شبنم</option>
-            <option value="IranSans">ایران‌سنس</option>
+    <div class="editor">
+        <h1>🖋️ ویرایشگر تصویر و متن آنلاین</h1>
+        <input type="file" id="imageUpload" accept="image/*"><br>
+        <canvas id="canvas"></canvas><br>
+        <input type="text" id="textInput" placeholder="متن را وارد کنید">
+        <select id="fontSelect">
+            <option value="Vazir">Vazir</option>
+            <option value="Shabnam">Shabnam</option>
+            <option value="Sahel">Sahel</option>
         </select>
-        <button onclick="downloadImage()">دانلود خروجی</button>
+        <input type="color" id="colorPicker" value="#000000">
+        <input type="range" id="fontSize" min="10" max="80" value="30">
+        <button onclick="downloadImage()">💾 ذخیره تصویر</button>
     </div>
     <script src="script.js"></script>
 </body>

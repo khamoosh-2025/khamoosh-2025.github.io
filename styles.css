@@ -1,34 +1,26 @@
+
 body {
-  font-family: sans-serif;
-  direction: rtl;
-  margin: 0;
-  padding: 0;
-  background: #fdfdfd;
+    font-family: sans-serif;
+    direction: rtl;
+    text-align: center;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 2rem;
 }
-header {
-  background: #333;
-  padding: 10px;
+.editor {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: inline-block;
 }
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
+canvas {
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    max-width: 100%;
 }
-nav a {
-  color: white;
-  text-decoration: none;
-}
-.welcome {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(145deg, #e0e0e0, #ffffff);
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
+input, select, button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
 }
