@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مدیریت محتوا</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      text-align: right;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+    .actions button {
+      margin-left: 5px;
+      padding: 6px 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .edit-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+    }
+    .add-link {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 8px 15px;
+      background-color: #2196f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>مدیریت محتوا</h1>
+  <a href="add-content.html" class="add-link">➕ افزودن مطلب جدید</a>
+  <table>
+    <thead>
+      <tr>
+        <th>عنوان</th>
+        <th>تاریخ</th>
+        <th>دسته‌بندی</th>
+        <th>عملیات</th>
+      </tr>
+    </thead>
+    <tbody id="content-list">
+      <tr>
+        <td>نمونه مقاله اول</td>
+        <td>۱۴۰۳/۰۴/۲۸</td>
+        <td>مقالات</td>
+        <td class="actions">
+          <button class="edit-btn">ویرایش</button>
+          <button class="delete-btn">حذف</button>
+        </td>
+      </tr>
+      <tr>
+        <td>نمونه مقاله دوم</td>
+        <td>۱۴۰۳/۰۴/۲۹</td>
+        <td>اخبار</td>
+        <td class="actions">
+          <button class="edit-btn">ویرایش</button>
+          <button class="delete-btn">حذف</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
