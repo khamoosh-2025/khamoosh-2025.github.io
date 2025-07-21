@@ -4,39 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>صفحه اصلی</title>
-  <style>
-    body {
-      font-family: "Tahoma", sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      padding: 20px;
-    }
-    h1 {
-      color: #005f73;
-    }
-    .image-container {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .image-container img {
-      width: 200px;
-      border: 3px solid #0a9396;
-      border-radius: 10px;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #3a3a3a;
-    }
-  </style>
+  <title>ابزار پیشرفته ویرایش تصویر</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1>به سایت من خوش آمدید</h1>
-  <p>در اینجا می‌توانید تصاویر و فونت‌های زیبایی را مشاهده کنید.</p>
-  <div class="image-container">
-    <img src="image1.jpg" alt="تصویر اول" />
-    <img src="image2.jpg" alt="تصویر دوم" />
+<body dir="rtl">
+  <h1>ابزار پیشرفته ویرایش تصویر</h1>
+  <div class="controls">
+    <input type="file" id="upload" accept="image/*" />
+    <input type="text" id="text" placeholder="متن فارسی را وارد کنید..." />
+    <select id="fontFamily">
+      <option value="Vazirmatn">وزیر</option>
+      <option value="Tahoma">Tahoma</option>
+      <option value="Arial">Arial</option>
+    </select>
+    <input type="color" id="textColor" value="#000000" />
+    <button onclick="addText()">افزودن متن</button>
+    <button onclick="applyFilter('grayscale')">سیاه و سفید</button>
+    <button onclick="applyFilter('brightness')">روشن‌تر</button>
+    <button onclick="enableDrawing()">فعال‌سازی قلم</button>
+    <button onclick="clearCanvas()">پاک‌سازی</button>
+    <button onclick="downloadImage()">ذخیره تصویر</button>
   </div>
+  <canvas id="canvas"></canvas>
+  <script src="script.js"></script>
 </body>
 </html>

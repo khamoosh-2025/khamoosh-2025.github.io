@@ -1,18 +1,16 @@
-/* Final Version */
+
 body {
-  font-family: sans-serif;
-  direction: rtl;
-  background-color: #f4f4f4;
-  color: #222;
-  margin: 0;
-  padding: 0;
-}
-header, footer {
-  background-color: #333;
-  color: white;
+  font-family: 'Vazirmatn', sans-serif;
   text-align: center;
-  padding: 1rem;
+  background-color: #f3f3f3;
+  padding: 20px;
 }
-main {
-  padding: 2rem;
+.controls {
+  margin-bottom: 10px;
+}
+canvas {
+  border: 2px solid #333;
+  max-width: 100%;
+  background: white;
+  cursor: crosshair;
 }
