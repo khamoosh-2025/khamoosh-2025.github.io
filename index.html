@@ -1,31 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ابزار پیشرفته ویرایش تصویر</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ویرایشگر حرفه‌ای</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body dir="rtl">
-  <h1>ابزار پیشرفته ویرایش تصویر</h1>
+<body>
+  <h1>ویرایشگر حرفه‌ای</h1>
+  <textarea id="editor" placeholder="متن خود را بنویسید..."></textarea>
   <div class="controls">
-    <input type="file" id="upload" accept="image/*" />
-    <input type="text" id="text" placeholder="متن فارسی را وارد کنید..." />
-    <select id="fontFamily">
-      <option value="Vazirmatn">وزیر</option>
-      <option value="Tahoma">Tahoma</option>
-      <option value="Arial">Arial</option>
-    </select>
-    <input type="color" id="textColor" value="#000000" />
-    <button onclick="addText()">افزودن متن</button>
-    <button onclick="applyFilter('grayscale')">سیاه و سفید</button>
-    <button onclick="applyFilter('brightness')">روشن‌تر</button>
-    <button onclick="enableDrawing()">فعال‌سازی قلم</button>
-    <button onclick="clearCanvas()">پاک‌سازی</button>
-    <button onclick="downloadImage()">ذخیره تصویر</button>
+    <button onclick="setBold()">Bold</button>
+    <button onclick="setItalic()">Italic</button>
+    <button onclick="setUnderline()">Underline</button>
+    <input type="color" onchange="setColor(this.value)" title="انتخاب رنگ">
+    <input type="file" accept="image/*" onchange="insertImage(this)" title="افزودن تصویر">
   </div>
-  <canvas id="canvas"></canvas>
+  <div id="preview"></div>
   <script src="script.js"></script>
 </body>
 </html>
