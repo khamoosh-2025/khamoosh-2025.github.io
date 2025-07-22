@@ -1,12 +1,13 @@
-// Comment Change: اسکریپت برای مدیریت نمایش و پنهان کردن عناصر
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".toggle-btn").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var target = document.getElementById(button.dataset.target);
-      if (target.classList.contains("hidden")) {
-        target.classList.remove("hidden");
-      } else {
-        target.classList.add("hidden");
+
+// hide-show.js
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.toggle-button');
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const targetId = btn.getAttribute('data-target');
+      const content = document.getElementById(targetId);
+      if (content) {
+        content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
       }
     });
   });
