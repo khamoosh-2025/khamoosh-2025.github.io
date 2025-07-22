@@ -1,18 +1,15 @@
-.toggle-hidden {
-  background-color: #eee;
-  border: none;
-  color: #333;
-  padding: 5px 10px;
-  margin: 4px 0;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.9rem;
+/* Comment Change: استایل برای پنهان/نمایش عناصر */
+.hidden {
+  display: none;
 }
 
-.hidden-content {
-  display: none;
-  margin: 5px 0;
-  padding: 5px 10px;
-  background-color: #f9f9f9;
-  border-left: 3px solid #999;
+.toggle-btn {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.toggle-content {
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
