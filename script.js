@@ -1,27 +1,22 @@
-const fontSelect = document.getElementById("fontSelect");
-const fontSizeRange = document.getElementById("fontSizeRange");
-const fontSizeValue = document.getElementById("fontSizeValue");
-const textInput = document.getElementById("textInput");
-const previewArea = document.getElementById("previewArea");
-const toggleTheme = document.getElementById("toggleTheme");
-const body = document.body;
+const textInput = document.getElementById('textInput');
+const fontSelect = document.getElementById('fontSelect');
+const colorPicker = document.getElementById('colorPicker');
+const output = document.getElementById('output');
 
-function updatePreview() {
-  const font = fontSelect.value;
-  const size = fontSizeRange.value + "px";
-  const text = textInput.value || "متن پیش‌نمایش...";
-
-  previewArea.style.fontFamily = font;
-  previewArea.style.fontSize = size;
-  previewArea.textContent = text;
-  fontSizeValue.textContent = size;
+function updateOutput() {
+  output.innerText = textInput.value;
+  output.style.fontFamily = fontSelect.value;
+  output.style.color = colorPicker.value;
 }
 
-fontSelect.addEventListener("change", updatePreview);
-fontSizeRange.addEventListener("input", updatePreview);
-textInput.addEventListener("input", updatePreview);
-toggleTheme.addEventListener("click", () => {
-  body.classList.toggle("dark");
-});
+textInput.addEventListener('input', updateOutput);
+fontSelect.addEventListener('change', updateOutput);
+colorPicker.addEventListener('input', updateOutput);
 
-updatePreview();
+function downloadText() {
+  const blob = new Blob([textInput.value], { type: 'text/plain;charset=utf-8' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'output.txt';
+  link.click();
+}

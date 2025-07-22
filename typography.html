@@ -1,58 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تایپوگرافی و فونت‌ها</title>
-  <link href="fonts.css" rel="stylesheet" />
-  <style>
-    body {
-      background: #f8f8f8;
-      font-family: "Vazirmatn", sans-serif;
-      padding: 2rem;
-      line-height: 2;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    .font-sample {
-      background: white;
-      padding: 1.5rem;
-      margin: 1rem auto;
-      border-radius: 12px;
-      max-width: 800px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-    .font-name {
-      font-size: 1rem;
-      color: #888;
-      margin-top: 0.5rem;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>طراحی متن و ویرایش فونت</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <h1>نمونه فونت‌های فارسی</h1>
-  <div class="font-sample" style="font-family: 'Vazirmatn';">
-    <div>زندگی زیباست وقتی با فونت مناسب همراه باشد</div>
-    <div class="font-name">Vazirmatn</div>
-  </div>
-  <div class="font-sample" style="font-family: 'Sahel';">
-    <div>زندگی زیباست وقتی با فونت مناسب همراه باشد</div>
-    <div class="font-name">Sahel</div>
-  </div>
-  <div class="font-sample" style="font-family: 'Lalezar';">
-    <div>زندگی زیباست وقتی با فونت مناسب همراه باشد</div>
-    <div class="font-name">Lalezar</div>
-  </div>
-  <div class="font-sample" style="font-family: 'Shabnam';">
-    <div>زندگی زیباست وقتی با فونت مناسب همراه باشد</div>
-    <div class="font-name">Shabnam</div>
-  </div>
-  <div class="font-sample" style="font-family: 'IranNastaliq';">
-    <div>زندگی زیباست وقتی با فونت مناسب همراه باشد</div>
-    <div class="font-name">IranNastaliq</div>
-  </div>
+  <header>
+    <h1>🎨 طراحی متن و ویرایش فونت</h1>
+  </header>
+  <main>
+    <textarea id="textInput" placeholder="متن خود را بنویسید..."></textarea>
+    <div class="controls">
+      <label>فونت:
+        <select id="fontSelect">
+          <option value="IranNastaliq">ایران نستعلیق</option>
+          <option value="Vazir">وزیر</option>
+          <option value="Shabnam">شبنم</option>
+        </select>
+      </label>
+      <label>رنگ:
+        <input type="color" id="colorPicker" value="#000000"/>
+      </label>
+    </div>
+    <div id="output" class="output-box"></div>
+    <button onclick="downloadText()">دانلود خروجی</button>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

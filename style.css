@@ -1,7 +1,36 @@
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('IranNastaliq.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Vazir';
+  src: url('Vazir.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Shabnam';
+  src: url('Shabnam.woff2') format('woff2');
+}
+
 body {
-  direction: rtl;
-  font-family: IranNastaliq, serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: 'Vazir', sans-serif;
+  background: #fdfdfd;
   padding: 20px;
+  text-align: center;
+  direction: rtl;
+}
+textarea {
+  width: 90%;
+  height: 100px;
+  font-size: 18px;
+}
+.controls {
+  margin: 10px 0;
+}
+.output-box {
+  border: 1px solid #aaa;
+  margin: 10px auto;
+  padding: 20px;
+  width: 90%;
+  min-height: 80px;
+  background: #fff;
 }
