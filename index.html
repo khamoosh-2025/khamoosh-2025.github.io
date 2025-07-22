@@ -1,28 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>فونت‌نمای سایت</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>پیش‌نمایش فونت</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>فونت‌نمای سایت</h1>
-    <textarea id="textInput" placeholder="متن دلخواه خود را اینجا بنویسید...">سلام دنیا!</textarea>
-    <div class="font-cards">
-      <div class="font-card" style="font-family: 'Vazirmatn';">سلام دنیا! (Vazirmatn)</div>
-      <div class="font-card" style="font-family: 'Shabnam';">سلام دنیا! (Shabnam)</div>
-      <div class="font-card" style="font-family: 'Sahel';">سلام دنیا! (Sahel)</div>
+    <h1>پیش‌نمایش فونت فارسی</h1>
+    <div class="controls">
+      <label for="fontSelect">انتخاب فونت:</label>
+      <select id="fontSelect">
+        <option value="Vazirmatn">Vazirmatn</option>
+        <option value="Shabnam">Shabnam</option>
+        <option value="Sahel">Sahel</option>
+      </select>
+
+      <label for="fontSizeRange">اندازه فونت: <span id="fontSizeValue">24px</span></label>
+      <input type="range" id="fontSizeRange" min="12" max="72" value="24">
+
+      <button id="toggleTheme">تغییر حالت شب/روز</button>
     </div>
+
+    <textarea id="textInput" placeholder="متن خود را اینجا بنویسید..."></textarea>
+    <div id="previewArea">متن پیش‌نمایش...</div>
   </div>
-  <script>
-    const input = document.getElementById("textInput");
-    input.addEventListener("input", () => {
-      document.querySelectorAll(".font-card").forEach(card => {
-        card.textContent = input.value + " (" + card.style.fontFamily + ")";
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

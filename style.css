@@ -1,20 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+@import url('https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css');
+@import url('https://cdn.fontcdn.ir/Font/Persian/Sahel/Sahel.css');
+
 body {
-  background: #f4f4f4;
-  font-family: Vazir, sans-serif;
-  text-align: center;
-  padding: 40px;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
   direction: rtl;
+  padding: 20px;
+}
+
+body.dark {
+  background: #1e1e1e;
+  color: #eee;
 }
 
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: auto;
 }
 
-select {
-  font-size: 16px;
-  padding: 8px;
-  margin-top: 15px;
+.controls {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#previewArea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  font-size: 24px;
+  min-height: 100px;
 }
