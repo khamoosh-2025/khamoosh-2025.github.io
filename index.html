@@ -1,30 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>پیش‌نمایش فونت</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>نمایش فونت‌های فارسی</title>
+    <link rel="stylesheet" href="fonts.css">
+    <style>
+        h2 { font-size: 24px; margin-top: 40px; }
+        .sample { font-size: 20px; }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>پیش‌نمایش فونت فارسی</h1>
-    <div class="controls">
-      <label for="fontSelect">انتخاب فونت:</label>
-      <select id="fontSelect">
-        <option value="Vazirmatn">Vazirmatn</option>
-        <option value="Shabnam">Shabnam</option>
-        <option value="Sahel">Sahel</option>
-      </select>
+    <h2 style="font-family: 'Vazir';">فونت وزیر</h2>
+    <div class="sample" style="font-family: 'Vazir';">سلام! این متن با فونت وزیر نوشته شده است.</div>
 
-      <label for="fontSizeRange">اندازه فونت: <span id="fontSizeValue">24px</span></label>
-      <input type="range" id="fontSizeRange" min="12" max="72" value="24">
+    <h2 style="font-family: 'Shabnam';">فونت شبنم</h2>
+    <div class="sample" style="font-family: 'Shabnam';">سلام! این متن با فونت شبنم نوشته شده است.</div>
 
-      <button id="toggleTheme">تغییر حالت شب/روز</button>
-    </div>
+    <h2 style="font-family: 'Kalameh';">فونت کلمه</h2>
+    <div class="sample" style="font-family: 'Kalameh';">سلام! این متن با فونت کلمه نوشته شده است.</div>
 
-    <textarea id="textInput" placeholder="متن خود را اینجا بنویسید..."></textarea>
-    <div id="previewArea">متن پیش‌نمایش...</div>
-  </div>
-  <script src="script.js"></script>
+    <h2 style="font-family: 'IranNastaliq';">فونت ایران نستعلیق</h2>
+    <div class="sample" style="font-family: 'IranNastaliq'; font-size: 28px;">سلام! این متن با فونت ایران نستعلیق نوشته شده است.</div>
 </body>
 </html>

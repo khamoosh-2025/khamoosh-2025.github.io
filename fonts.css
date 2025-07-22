@@ -1,21 +1,26 @@
 
 @font-face {
-  font-family: 'Vazirmatn';
-  src: url('fonts/Vazirmatn.woff2') format('woff2');
+    font-family: 'Vazir';
+    src: url('fonts/Vazir.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Sahel';
-  src: url('fonts/Sahel.woff2') format('woff2');
+    font-family: 'Shabnam';
+    src: url('fonts/Shabnam.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Lalezar';
-  src: url('fonts/Lalezar.woff2') format('woff2');
+    font-family: 'Kalameh';
+    src: url('fonts/Kalameh.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Shabnam';
-  src: url('fonts/Shabnam.woff2') format('woff2');
+    font-family: 'IranNastaliq';
+    src: url('fonts/IranNastaliq.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'IranNastaliq';
-  src: url('fonts/IranNastaliq.woff2') format('woff2');
+
+body {
+    font-family: 'Vazir', sans-serif;
+}
+.sample {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
