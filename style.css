@@ -1,3 +1,18 @@
-body { font-family: sans-serif; direction: rtl; background: #f5f5f5; padding: 20px; }
-nav ul { list-style: none; padding: 0; display: flex; gap: 10px; }
-nav a { text-decoration: none; color: #333; background: #ddd; padding: 5px 10px; border-radius: 5px; }
+
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('IranNastaliq.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 50px;
+  background: #fff;
+}
+.nastaliq {
+  font-family: 'IranNastaliq', sans-serif;
+  font-size: 36px;
+  line-height: 2;
+}
