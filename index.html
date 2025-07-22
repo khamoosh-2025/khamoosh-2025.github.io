@@ -1,24 +1,28 @@
+
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>انتخاب فونت</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v29.1.0/dist/font-face.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/samim-font@v26.1.0/dist/font-face.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>فونت‌نمای سایت</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1 id="title">تغییر فونت</h1>
-    <select id="fontSelector">
-      <option value="Vazir">فونت وزیر</option>
-      <option value="Shabnam">فونت شبنم</option>
-      <option value="Samim">فونت صمیم</option>
-    </select>
-    <p id="text">این متن با فونت انتخابی نمایش داده می‌شود.</p>
+    <h1>فونت‌نمای سایت</h1>
+    <textarea id="textInput" placeholder="متن دلخواه خود را اینجا بنویسید...">سلام دنیا!</textarea>
+    <div class="font-cards">
+      <div class="font-card" style="font-family: 'Vazirmatn';">سلام دنیا! (Vazirmatn)</div>
+      <div class="font-card" style="font-family: 'Shabnam';">سلام دنیا! (Shabnam)</div>
+      <div class="font-card" style="font-family: 'Sahel';">سلام دنیا! (Sahel)</div>
+    </div>
   </div>
-  <script src="script.js"></script>
+  <script>
+    const input = document.getElementById("textInput");
+    input.addEventListener("input", () => {
+      document.querySelectorAll(".font-card").forEach(card => {
+        card.textContent = input.value + " (" + card.style.fontFamily + ")";
+      });
+    });
+  </script>
 </body>
 </html>

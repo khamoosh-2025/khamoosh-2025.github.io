@@ -1,26 +1,47 @@
 
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Shabnam';
+  src: url('fonts/Shabnam.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Sahel';
+  src: url('fonts/Sahel.woff2') format('woff2');
+}
+
 body {
-    font-family: sans-serif;
-    direction: rtl;
-    text-align: center;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 2rem;
+  direction: rtl;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #f9f9f9;
+  padding: 2rem;
+  text-align: center;
 }
-.editor {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: inline-block;
+
+.container {
+  max-width: 800px;
+  margin: auto;
 }
-canvas {
-    border: 1px solid #ccc;
-    margin-top: 1rem;
-    max-width: 100%;
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
-input, select, button {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1rem;
+
+.font-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.font-card {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 1.5rem;
 }
