@@ -2,59 +2,65 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>فولدرهای هستی‌شناسی</title>
-  <style>
-    body {
-      font-family: 'Tahoma', sans-serif;
-      background-color: #fdfdfd;
-      padding: 20px;
-      line-height: 2;
-    }
-    h2 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    h3 {
-      font-family: 'B Nazanin', serif;
-      font-weight: normal;
-      color: #666;
-      margin-top: 0;
-      margin-bottom: 25px;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a {
-      text-decoration: none;
-      color: #1a73e8;
-      font-size: 20px;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>دستاوردهای وجود</title>
+    <style>
+        @font-face {
+            font-family: 'IranNastaliq';
+            src: url('assets/fonts/IranNastaliq.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Bitatabasom';
+            src: url('assets/fonts/Bitatabasom.woff2') format('woff2');
+        }
+        body {
+            font-family: Bitatabasom, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 2rem;
+            line-height: 2;
+        }
+        h1 {
+            font-family: IranNastaliq, serif;
+            font-size: 40px;
+            text-align: center;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-family: Bitatabasom;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            font-family: Bitatabasom;
+        }
+    </style>
 </head>
 <body>
-  <section>
-    <!-- ✅ START: Section - Ontology Folders Links [Six Folders] -->
-    <h2>فولدرهای هستی‌شناسی</h2>
-    <h3>در این بخش می‌توانید به شش مسیر تفکر هستی‌شناختی دسترسی داشته باشید.</h3>
-    <ul>
-      <li><a href="1آیینه جلال و جمال/">1. آیینه جلال و جمال</a></li>
-      <li><a href="2 حرکت دهنده وجود/">2. حرکت دهنده وجود</a></li>
-      <li><a href="3 اصلاحات وجود/">3. اصلاحات وجود</a></li>
-      <li><a href="4 وحدت الوجود/">4. وحدت الوجود</a></li>
-      <li><a href="5 خزائن وجود/">5. خزائن وجود</a></li>
-      <li><a href="6 کمالات وجود/">6. کمالات وجود</a></li>
-    </ul>
-    <!-- ⬆️✅ END: Section - Ontology Folders Links [Six Folders] -->
-  </section>
+    <h1>دستاوردهای وجود</h1>
+    <h2>شش مسیر در شناخت و کمال</h2>
+    <div class="grid">
+        <div class="card">1 - آیینه جلال و جمال</div>
+        <div class="card">2 - حرکت دهنده وجود</div>
+        <div class="card">3 - اصلاحات وجود</div>
+        <div class="card">4 - وحدت الوجود</div>
+        <div class="card">5 - خزائن وجود</div>
+        <div class="card">6 - کمالات وجود</div>
+    </div>
 </body>
 </html>
