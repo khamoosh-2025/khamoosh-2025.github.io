@@ -1,42 +1,21 @@
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nazanin', serif;
-  background: url('texture-bg.png') repeat;
-  color: #222;
-  direction: rtl;
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('fonts/Vazirmatn.woff2') format('woff2');
 }
-
-.container {
-  max-width: 800px;
-  margin: 4rem auto;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  border-radius: 12px;
+@font-face {
+  font-family: 'Sahel';
+  src: url('fonts/Sahel.woff2') format('woff2');
 }
-
-.title {
-  font-size: 48px;
-  font-family: 'IranNastaliq', cursive;
-  color: #6B4226;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+@font-face {
+  font-family: 'Lalezar';
+  src: url('fonts/Lalezar.woff2') format('woff2');
 }
-
-.subtitle {
-  font-size: 22px;
-  font-family: 'Zar', serif;
-  margin-bottom: 2rem;
-  color: #444;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+@font-face {
+  font-family: 'Shabnam';
+  src: url('fonts/Shabnam.woff2') format('woff2');
 }
-
-.font-examples .example {
-  padding: 10px;
-  margin: 10px 0;
-  font-size: 24px;
-  background-color: #f9f9f9aa;
-  border-right: 5px solid #c5a880;
-  border-radius: 8px;
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('fonts/IranNastaliq.woff2') format('woff2');
 }
