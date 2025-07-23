@@ -1,32 +1,19 @@
+
 @font-face {
-  font-family: "IranNastaliq";
-  src: url("../fonts/IranNastaliq.woff2") format("woff2");
+    font-family: 'IranNastaliq';
+    src: url('../fonts/IranNastaliq.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-  margin: 0;
-  font-family: IranNastaliq, sans-serif;
-  background: #f9f9f9;
-  color: #222;
-  text-align: center;
+    font-family: 'IranNastaliq', sans-serif;
+    text-align: right;
+    direction: rtl;
+    padding: 20px;
 }
 
-header {
-  padding: 2rem;
-  background-color: #ffffff;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: bold;
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
