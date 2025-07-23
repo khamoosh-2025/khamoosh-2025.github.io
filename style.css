@@ -1,9 +1,32 @@
-.hidden-text {
-  background-color: #eee;
-  color: transparent;
-  cursor: pointer;
-  transition: color 0.3s ease;
+@font-face {
+  font-family: "IranNastaliq";
+  src: url("../fonts/IranNastaliq.woff2") format("woff2");
 }
-.hidden-text.show {
-  color: black;
+
+body {
+  margin: 0;
+  font-family: IranNastaliq, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  text-align: center;
+}
+
+header {
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
 }
