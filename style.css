@@ -1,14 +1,14 @@
+
 @font-face {
   font-family: 'IranNastaliq';
-  src: url('IranNastaliq.woff2') format('woff2');
+  src: url('../fonts/IranNastaliq.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-.nastaliq {
-  font-family: 'IranNastaliq', sans-serif;
-  font-size: 24px;
-  line-height: 1.8;
-  direction: rtl;
-  text-align: right;
+.typographic {
+  font-family: 'IranNastaliq', serif;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  text-align: justify;
 }
