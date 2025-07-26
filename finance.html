@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مدیریت دخل و خرج</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      direction: rtl;
+      background: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .totals {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>صفحه دخل و خرج</h1>
+    <form id="finance-form">
+      <input type="text" id="description" placeholder="توضیح" required />
+      <input type="number" id="amount" placeholder="مبلغ" required />
+      <select id="type">
+        <option value="income">دخل</option>
+        <option value="expense">خرج</option>
+      </select>
+      <button type="submit">افزودن</button>
+    </form>
+
+    <table id="records">
+      <thead>
+        <tr>
+          <th>توضیح</th>
+          <th>مبلغ</th>
+          <th>نوع</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="totals">
+      <p>جمع دخل: <span id="total-income">۰</span> تومان</p>
+      <p>جمع خرج: <span id="total-expense">۰</span> تومان</p>
+      <p>مانده حساب: <span id="balance">۰</span> تومان</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('finance-form');
+    const tbody = document.querySelector('#records tbody');
+    const totalIncomeEl = document.getElementById('total-income');
+    const totalExpenseEl = document.getElementById('total-expense');
+    const balanceEl = document.getElementById('balance');
+
+    let totalIncome = 0;
+    let totalExpense = 0;
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const description = document.getElementById('description').value;
+      const amount = parseFloat(document.getElementById('amount').value);
+      const type = document.getElementById('type').value;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${description}</td>
+        <td>${amount.toLocaleString()}</td>
+        <td>${type === 'income' ? 'دخل' : 'خرج'}</td>
+      `;
+      tbody.appendChild(tr);
+
+      if (type === 'income') {
+        totalIncome += amount;
+      } else {
+        totalExpense += amount;
+      }
+
+      updateTotals();
+      form.reset();
+    });
+
+    function updateTotals() {
+      totalIncomeEl.textContent = totalIncome.toLocaleString();
+      totalExpenseEl.textContent = totalExpense.toLocaleString();
+      balanceEl.textContent = (totalIncome - totalExpense).toLocaleString();
+    }
+  </script>
+</body>
+</html>
