@@ -1,1 +1,11 @@
-body { font-family: sans-serif; background-color: #f9f9f9; color: #333; padding: 20px; }
+body {
+  font-family: 'Tahoma', sans-serif;
+  direction: rtl;
+  background-color: #fdf6e3;
+  color: #333;
+  padding: 20px;
+}
+
+header h1 {
+  color: #b58900;
+}
