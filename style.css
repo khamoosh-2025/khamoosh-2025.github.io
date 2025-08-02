@@ -1,26 +1,15 @@
-@font-face {
-  font-family: 'Vazirmatn';
-  src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
-}
-
+/* Our Journey Section Styles */
 body {
   direction: rtl;
-  font-family: 'Vazirmatn', sans-serif;
+  font-family: sans-serif;
   background: #f9f9f9;
   padding: 2rem;
   text-align: center;
-  margin: 0;
-}
-
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .journey-section {
   padding: 40px 20px;
   background: #f9f9f9;
-  font-family: sans-serif;
 }
 
 .journey-section h2 {
@@ -51,5 +40,4 @@ header h1 {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   margin-right: 15px;
-  text-align: right;
 }
