@@ -1,55 +1,30 @@
-/* فونت‌ها */
 @font-face {
   font-family: 'Vazirmatn';
   src: url('fonts/Vazirmatn-Regular.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'Shabnam';
-  src: url('fonts/Shabnam.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Sahel';
-  src: url('fonts/Sahel.woff2') format('woff2');
-}
 
 body {
   direction: rtl;
-  font-family: 'Vazirmatn', 'Shabnam', sans-serif;
-  background-color: #f9f9f9;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-header {
-  background: #eaeaea;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #f9f9f9;
   padding: 2rem;
   text-align: center;
+  margin: 0;
 }
 
 header h1 {
-  margin: 0;
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .journey-section {
   padding: 40px 20px;
   background: #f9f9f9;
-  max-width: 800px;
-  margin: auto;
+  font-family: sans-serif;
 }
 
 .journey-section h2 {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  color: #222;
-}
-
-.journey-section p {
-  text-align: justify;
-  line-height: 1.8;
-  font-size: 1.1rem;
   margin-bottom: 30px;
 }
 
@@ -67,8 +42,7 @@ header h1 {
 
 .timeline-date {
   font-weight: bold;
-  color: #555;
-  margin-bottom: 10px;
+  color: #444;
 }
 
 .timeline-content {
@@ -77,14 +51,5 @@ header h1 {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   margin-right: 15px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #f0f0f0;
-  color: #777;
-  font-size: 0.9rem;
+  text-align: right;
 }
