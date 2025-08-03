@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>مقدمه | آینه</title>
   <style>
     body {
@@ -11,41 +10,43 @@
       padding: 40px;
       line-height: 2;
     }
-    .reveal {
+    .hidden-text {
       display: none;
       margin-top: 20px;
-      font-weight: bold;
       font-size: 18px;
+      font-weight: bold;
     }
-    button {
-      font-size: 20px;
+    .toggle-button {
       padding: 10px 20px;
+      font-size: 20px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
+
   <h2>[0001][مقدمه]</h2>
 
   <p>در ارتباط به کتاب شریف اصل آینه جلال و جمال وجود ... [متن اصلی ادامه دارد]</p>
 
-  <button onclick="toggleReveal(this)">O</button>
+  <button class="toggle-button" onclick="toggleText(this)">O</button>
 
-  <div class="reveal">[+ من عرف نفسه فقد عرف ربه +]</div>
+  <div class="hidden-text" id="revealText">[+ من عرف نفسه فقد عرف ربه +]</div>
 
   <p><strong>[ومن الله توفیق]</strong></p>
 
   <script>
-    function toggleReveal(button) {
-      const content = document.querySelector('.reveal');
-      if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block';
+    function toggleText(button) {
+      const text = document.getElementById('revealText');
+      if (text.style.display === 'none' || text.style.display === '') {
+        text.style.display = 'block';
         button.textContent = 'C';
       } else {
-        content.style.display = 'none';
+        text.style.display = 'none';
         button.textContent = 'O';
       }
     }
   </script>
+
 </body>
 </html>
