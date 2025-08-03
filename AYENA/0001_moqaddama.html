@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>[0001][مقدمه]</title>
   <style>
     body {
-      font-family: 'Vazirmatn', sans-serif;
-      font-size: 19px;
+      font-family: "Vazirmatn", sans-serif;
+      font-size: 18px;
       line-height: 1.8;
       padding: 20px;
+      color: #222;
       background-color: #fff;
-      color: #000;
     }
-    h2 {
+    h1 {
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
     .toggle-button {
-      display: inline;
-      font-size: 12px;
-      padding: 1px 6px;
+      display: inline-block;
+      font-size: 14px;
+      padding: 2px 6px;
       margin: 0 4px;
-      background-color: #3498db;
-      color: white;
+      background-color: #007bff;
+      color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
     }
     .hidden-text {
@@ -37,28 +36,32 @@
   </style>
 </head>
 <body>
+  <h1>[0001] مقدمه</h1>
 
-<h2>[0001][مقدمه]</h2>
+  <p>
+    در ارتباط به کتاب شریف اصل آئینه جلال و جمال وجود حاوی یک‌صد و بیست و نه فرمان جناب حضرت ابوالوقت زمان وخلیفة الله … (متن اصلی مقدمه کامل اینجا قرار گیرد)
+    همچنین در این سلوک، مقام قربیت، اخوت، محبت، صداقت، و معرفتی عمیق از مشاهدۀ حضور الهی حاصل می‌گردد.
+    <button class="toggle-button" onclick="toggleText(this)">O</button>
+    <span class="hidden-text">من عرفه نفسه فقد عرفه ربه</span>.
+    این اصل معرفتی، رمزی است برای شناخت نفس و شناخت رب.
+  </p>
 
-<p>
-اين مقدمه جهت روشنايى و آگاهى طالبین راه حق نگاشته شده است. بسيارى از اولياء خدا در مسير سير و سلوك خود سختى‌هاى زيادى را تحمل نموده‌اند تا حقيقت براى طالبان آشكار شود.
-<button class="toggle-button" onclick="toggleText(this)">O</button>
-<span class="hidden-text">من عرفه نفسه فقد عرفه ربه</span>
-. اين كلمه رمز بسيارى از عرفان‌هاى باطنى و سلوك حقيقى است. آگاهى بر نفس، دروازه شناخت رب است. پس كسى كه خود را شناخت، بى‌شك پروردگار خود را نيز خواهد شناخت.
-</p>
+  <p>
+    ادامهٔ کامل مقدمه طبق نسخه اصلی کتاب در اینجا درج شود...  
+    (متن کامل ادامه یابد؛ همه به نمایش درآید، بدون هیچ مخفی‌سازی دیگر)
+  </p>
 
-<script>
-  function toggleText(button) {
-    const span = button.nextElementSibling;
-    if (span.style.display === "none" || span.style.display === "") {
-      span.style.display = "inline";
-      button.textContent = "C";
-    } else {
-      span.style.display = "none";
-      button.textContent = "O";
+  <script>
+    function toggleText(btn) {
+      const hidden = btn.nextElementSibling;
+      if (hidden.style.display === "none" || hidden.style.display === "") {
+        hidden.style.display = "inline";
+        btn.textContent = "C";
+      } else {
+        hidden.style.display = "none";
+        btn.textContent = "O";
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
