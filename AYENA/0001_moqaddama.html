@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>0001 - مقدمه</title>
+  <meta charset="UTF-8">
+  <title>【0001】【مقدمه】</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Tahoma, sans-serif;
       text-align: center;
-      margin-top: 50px;
+      padding: 40px;
+      line-height: 2;
     }
-    #hiddenText {
+    .hidden-text {
       display: none;
-      margin-top: 20px;
-      font-weight: bold;
+      margin: 20px auto;
+      width: 80%;
     }
     button {
       font-size: 18px;
-      padding: 10px 20px;
-      margin-top: 20px;
+      padding: 6px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
-  <h2>[0001][مقدمه]</h2>
+
+  <h2>【0001】【مقدمه】</h2>
   <p>در ارتباط به کتاب شریف اصل آینه جلال و جمال وجود ... [متن اصلی ادامه دارد]</p>
 
-  <button id="toggleButton" onclick="toggleText()">O</button>
-  <div id="hiddenText">[+من عرف نفسه فقد عرف ربه+]</div>
+  <button onclick="toggleText(this)">O</button>
 
-  <p><strong>[ومن الله توفیق]</strong></p>
+  <div class="hidden-text" id="text-block">
+    <p>من عرفه نفسه فقد عرفه ربه</p>
+  </div>
+
+  <p><strong>【ومن الله توفیق】</strong></p>
 
   <script>
-    function toggleText() {
-      var hiddenText = document.getElementById("hiddenText");
-      var button = document.getElementById("toggleButton");
-      if (hiddenText.style.display === "none") {
-        hiddenText.style.display = "block";
+    function toggleText(button) {
+      const block = document.getElementById("text-block");
+      if (block.style.display === "none" || block.style.display === "") {
+        block.style.display = "block";
         button.textContent = "C";
       } else {
-        hiddenText.style.display = "none";
+        block.style.display = "none";
         button.textContent = "O";
       }
     }
   </script>
+
 </body>
 </html>
