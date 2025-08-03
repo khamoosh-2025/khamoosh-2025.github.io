@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>مقدمه</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[0001][مقدمه]</title>
   <style>
     body {
-      font-family: Tahoma, sans-serif;
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 19px;
+      line-height: 1.8;
+      padding: 20px;
       background-color: #fff;
-      color: #222;
-      padding: 2rem;
-      line-height: 2;
+      color: #000;
+    }
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
     }
     .toggle-button {
-      background-color: #eee;
-      border: 1px solid #aaa;
-      border-radius: 5px;
+      display: inline;
+      font-size: 12px;
+      padding: 1px 6px;
+      margin: 0 4px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      padding: 0.4rem 1rem;
-      font-weight: bold;
-      margin: 1rem 0;
     }
-    #hidden-text {
+    .hidden-text {
       display: none;
-      background: #f9f9f9;
-      padding: 1rem;
-      border-right: 4px solid #ccc;
-      margin-top: 1rem;
+      color: red;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <h1>مقدمه</h1>
+<h2>[0001][مقدمه]</h2>
 
-  <p>
-    این متن مقدمهٔ بخش آیینه است. مطالب این بخش برای معرفی و آغاز مباحث آینده آماده شده‌اند و به خواننده دید کلی دربارهٔ محتوای پروژه می‌دهند.
-  </p>
+<p>
+اين مقدمه جهت روشنايى و آگاهى طالبین راه حق نگاشته شده است. بسيارى از اولياء خدا در مسير سير و سلوك خود سختى‌هاى زيادى را تحمل نموده‌اند تا حقيقت براى طالبان آشكار شود.
+<button class="toggle-button" onclick="toggleText(this)">O</button>
+<span class="hidden-text">من عرفه نفسه فقد عرفه ربه</span>
+. اين كلمه رمز بسيارى از عرفان‌هاى باطنى و سلوك حقيقى است. آگاهى بر نفس، دروازه شناخت رب است. پس كسى كه خود را شناخت، بى‌شك پروردگار خود را نيز خواهد شناخت.
+</p>
 
-  <button class="toggle-button" onclick="toggleText()">O</button>
-  <div id="hidden-text">من عرفه نفسه فقد عرفه ربه</div>
-
-  <script>
-    function toggleText() {
-      const text = document.getElementById('hidden-text');
-      const button = document.querySelector('.toggle-button');
-      if (text.style.display === 'none') {
-        text.style.display = 'block';
-        button.textContent = 'C';
-      } else {
-        text.style.display = 'none';
-        button.textContent = 'O';
-      }
+<script>
+  function toggleText(button) {
+    const span = button.nextElementSibling;
+    if (span.style.display === "none" || span.style.display === "") {
+      span.style.display = "inline";
+      button.textContent = "C";
+    } else {
+      span.style.display = "none";
+      button.textContent = "O";
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
