@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مقدمه</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      line-height: 1.8;
+      background: #f9f9f9;
+      color: #333;
+    }
+    #reveal-btn {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #hidden-text {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>مقدمه</h1>
+  <button id="reveal-btn">O</button>
+  <div id="hidden-text">من عرفه نفسه فقد عرفه ربه</div>
+
+  <script>
+    const button = document.getElementById('reveal-btn');
+    const hiddenText = document.getElementById('hidden-text');
+    let isOpen = false;
+
+    button.addEventListener('click', () => {
+      isOpen = !isOpen;
+      hiddenText.style.display = isOpen ? 'block' : 'none';
+      button.textContent = isOpen ? 'C' : 'O';
+    });
+  </script>
+</body>
+</html>
